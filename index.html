@@ -3,13 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda Zyrox</title>
+<title>Zyrox Store</title>
 <style>
 body{
   font-family:Arial;
   margin:0;
   background:#0f0f0f;
   color:white;
+}
+
+.main-title{
+  text-align:center;
+  background:#000;
+  padding:20px 10px 10px;
+}
+
+.main-title h1{
+  margin:0;
+  font-size:36px;
+  color:#ff2e63;
+  letter-spacing:3px;
+  font-weight:900;
+  text-shadow: 0 0 10px rgba(255,46,99,0.6);
+
+  opacity:0;
+  transform:translateY(-20px);
+  animation:fadeDown 1s ease forwards;
+}
+
+.main-title p{
+  margin:5px 0 0;
+  font-size:13px;
+  color:#aaa;
+  letter-spacing:1px;
+}
+
+
+
+.top-bar{
+background: linear-gradient(90deg,#ff2e63,#ff1744);
+color:white;
+text-align:center;
+padding:10px;
+font-size:14px;
+font-weight:bold;
+letter-spacing:1px;
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* NAVBAR */
@@ -26,13 +65,13 @@ body{
   align-items:center;
   gap:10px;
 }
-.logo{
-  width:170px;
-  height:90px;
-}
+
 .logo-area h1{
   margin:0;
   font-size:38px;
+}.logo{
+  width:140px;
+  height:auto;
 }
 .menu{
   display:flex;
@@ -103,30 +142,23 @@ font-size:14px;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.45);
   text-align:center;
-  transition:0.35s;
   cursor:pointer;
   position:relative;
   transition:0.3s;
 }
 .product:hover{
-  transform:translateY(-8px) scale(1.03);
+  transform:translateY(-8px) scale(1.05);
   box-shadow:0 15px 35px rgba(0,0,0,0.6);
 }
 
-.product:hover{
-transform:scale(1.05);
-}
 
 
 .product img{
   width:100%;
-  height:220px;
+  height:200px;
   object-fit:contain;
-  background:#000;
-  display:block;
-  border-radius:12px;
-  padding:10px;
 }
+
 .product h3{
   margin:10px 0 5px 0;
   font-size:16px;
@@ -319,6 +351,7 @@ footer{
 footer h2{
   margin:0;
   color:#ff2e63;
+letter-spacing:2px;
 }
 .footer-links{
   margin-top:10px;
@@ -523,12 +556,43 @@ background:#ff0000;
 100%{transform:translate(-50%,-50%) scale(1);opacity:1;}
 }
 
+@keyframes fadeDown{
+  0%{
+    opacity:0;
+    transform:translateY(-20px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeUp{
+  0%{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 </style>
 </head>
 <body>
 
 <div class="cart-message" id="cartMessage">
 Producto añadido al carrito 🛒
+</div>
+
+<div class="main-title">
+  <h1>Zyrox Store</h1>
+  <p>Tienda oficial de zapatos Zyrox</p>
+</div>
+
+<div class="top-bar">
+🚚 Envíos a todo Colombia | Pago contra entrega disponible
 </div>
 
 <header class="navbar">
@@ -544,7 +608,7 @@ Producto añadido al carrito 🛒
 <a href="#hombre">Hombre</a>
 <a href="#mujer">Mujer</a>
 <a href="#ninos">Niños</a>
-<a onclick="toggleCart()">🛒 Carrito (<span id="cartCount">0</span>)</a>
+<a href="#" onclick="toggleCart()">🛒 Carrito (<span id="cartCount">0</span>)</a>
 </nav>
 </header>
 
