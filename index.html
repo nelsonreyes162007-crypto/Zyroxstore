@@ -428,6 +428,11 @@ letter-spacing:2px;
 /* RESPONSIVE CELULAR */
 @media (max-width:480px){
 
+  .products{
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
   .navbar{
 flex-direction:column;
 align-items:flex-start;
@@ -463,9 +468,9 @@ font-size:24px;
     gap:10px;
   }
   .product img{
-width:100%;
-height:220px;
-object-fit:contain;
+  width:100%;
+  height:150px;
+  object-fit:contain;
 }
 
   .product h3{
@@ -669,6 +674,10 @@ Total: $<span id="total">0</span>
 
 <div id="paymentFields" style="margin-top:10px;"></div>
 
+<input type="text" id="nombreCliente" placeholder="Nombre completo">
+<input type="text" id="direccionCliente" placeholder="Dirección">
+<input type="text" id="telefonoCliente" placeholder="Teléfono">
+
 <button onclick="confirmPayment()">Confirmar Pago</button>
 </div>
 
@@ -682,11 +691,11 @@ Total: $<span id="total">0</span>
 <p>$130</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
 </div>
 
 
@@ -698,11 +707,11 @@ Total: $<span id="total">0</span>
 <p>$110</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
 </div>
 
 
@@ -714,11 +723,26 @@ Total: $<span id="total">0</span>
 <p>$90</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
+<span>★</span>
+</div>
+
+<button onclick="addToCart(event,'Air Force',130,'1.jpeg')">Agregar</button>
+</div>
+<div class="product">
+<img src="10.png">
+<h3>Zyrox Air Max</h3>
+<p>$110</p>
+
+<div class="stars">
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
 </div>
 
 
@@ -735,11 +759,11 @@ Total: $<span id="total">0</span>
 <p>$75</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
 </div>
 
 
@@ -751,11 +775,11 @@ Total: $<span id="total">0</span>
 <p>$60</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
 </div>
 
 
@@ -767,12 +791,28 @@ Total: $<span id="total">0</span>
 <p>$70</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
 </div>
+
+<button onclick="addToCart(event,'Zyrox Nova',60,'5.jpeg')">Agregar</button>
+</div>
+<div class="product">
+<img src="11.png">
+<h3>Zyrox Beige</h3>
+<p>$130</p>
+
+<div class="stars">
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
+</div>
+
 
 
 <button onclick="addToCart(event,'Zyrox Beige',70,'6.jpeg')">Agregar</button>
@@ -788,11 +828,11 @@ Total: $<span id="total">0</span>
 <p>$45</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
 </div>
 
 
@@ -804,11 +844,11 @@ Total: $<span id="total">0</span>
 <p>$60</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
 </div>
 
 
@@ -820,11 +860,26 @@ Total: $<span id="total">0</span>
 <p>$50</p>
 
 <div class="stars">
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
-<span onclick="rate(this)">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
+<span>★</span>
+</div>
+
+<button onclick="addToCart(event,'Zyrox Kids Pink',60,'8.jpeg')">Agregar</button>
+</div>
+<div class="product">
+<img src="9.jpeg">
+<h3>Zyrox Escolar</h3>
+<p>$95</p>
+
+<div class="stars">
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span style="color:gold;">★</span>
+<span>★</span>
+<span>★</span>
 </div>
 
 
@@ -868,7 +923,7 @@ function toggleCart(){
 }
 
 function addToCart(e,name,price,image){
-  window.scrollTo({top:0, behavior:'smooth'});
+  // window.scrollTo({top:0, behavior:'smooth'});
   let flyImg = document.getElementById("fly-img")
   flyImg.style.backgroundImage = `url(${image})`
   flyImg.style.opacity = 1
@@ -987,50 +1042,58 @@ window.addEventListener("click", function(e){
 // Confirmar pago
 function confirmPayment(){
 
-  let method = document.getElementById("paymentMethod").value;
-  let inputs = document.querySelectorAll("#paymentFields input");
+// 1. VALIDAR CARRITO
+if(cart.length === 0){
+alert("El carrito está vacío");
+return;
+}
 
-  if(method !== "efectivo"){
+// 2. DATOS CLIENTE
+let nombre = document.getElementById("nombreCliente").value.trim();
+let direccion = document.getElementById("direccionCliente").value.trim();
+let telefono = document.getElementById("telefonoCliente").value.trim();
 
-    for(let i = 0; i < inputs.length; i++){
+// VALIDAR
+if(nombre === "" || direccion === "" || telefono === ""){
+alert("Completa todos los datos");
+return;
+}
 
-      if(inputs[i].value.trim() === ""){
-        alert("Debes llenar todos los campos de pago");
-        inputs[i].focus();
-        return;
-      }
+// 3. CREAR MENSAJE (MUY IMPORTANTE BIEN FORMATEADO)
+let mensaje = "FACTURA ZYROX\n\n";
 
-    }
+// PRODUCTOS
+cart.forEach(item=>{
+mensaje += `${item.name} x${item.quantity} - $${item.price * item.quantity}\n`;
+});
 
-  }
+// TOTAL
+mensaje += `\nTotal: $${total}\n\n`;
 
-  document.getElementById("successModal").style.display="block";
+// CLIENTE
+mensaje += `Nombre: ${nombre}\n`;
+mensaje += `Direccion: ${direccion}\n`;
+mensaje += `Telefono: ${telefono}`;
 
-  cart=[];
-  updateCart();
+// 4. CODIFICAR MENSAJE (🔥 CLAVE)
+let mensajeCodificado = window.location.href = url;
 
-  document.getElementById("paymentModal").style.display="none";
-  document.getElementById("cart").classList.remove("active");
-  document.getElementById("overlay").classList.remove("active");
+// 5. NUMERO
+let numero = "573203852595";
+
+// 6. LINK WHATSAPP
+let url = `https://wa.me/${numero}?text=${mensajeCodificado}`;
+
+// 7. ABRIR WHATSAPP DIRECTO
+window.location.href = url;
+
+// 8. LIMPIAR (OPCIONAL)
+cart = [];
+updateCart();
 
 }
 
-function rate(star){
 
-let stars = star.parentElement.children
-let index = Array.from(stars).indexOf(star)
-
-for(let i=0;i<stars.length;i++){
-
-if(i<=index){
-stars[i].style.color="gold"
-}else{
-stars[i].style.color="#555"
-}
-
-}
-
-}
 function buyWhatsApp(){
 
 if(cart.length===0){
@@ -1038,15 +1101,27 @@ alert("Tu carrito está vacío");
 return;
 }
 
-let phone = "573203852595";
+// 🔥 PEDIR DATOS
+let nombre = prompt("Ingresa tu nombre:");
+let direccion = prompt("Ingresa tu dirección:");
+let telefono = prompt("Ingresa tu número:");
 
-let message = "Hola, quiero comprar estos productos:%0A%0A";
+if(!nombre || !direccion || !telefono){
+alert("Debes completar todos los datos");
+return;
+}
+
+let phone = "573144532868";
+
+let message = "Pedido Zyrox%0A%0A";
 
 cart.forEach(item=>{
 message += `${item.name} x${item.quantity} - $${item.price * item.quantity}%0A`;
 });
 
-message += `%0ATotal: $${total}`;
+message += `Nombre: ${nombre}%0A`;
+message += `Direccion: ${direccion}%0A`;
+message += `Telefono: ${telefono}`;
 
 let url = `https://wa.me/${phone}?text=${message}`;
 
@@ -1105,10 +1180,10 @@ if(firstResult){
 
 // Espera un poquito para que el DOM actualice
 setTimeout(()=>{
-firstResult.scrollIntoView({
-behavior:"smooth",
-block: "start"
-});
+// firstResult.scrollIntoView({
+// behavior:"smooth",
+// block: "start"
+// });
 }, 100);
 
 }
@@ -1151,7 +1226,7 @@ product.style.display = "none";
 });
 
 if(firstResult){
-firstResult.scrollIntoView({behavior:"smooth"});
+// firstResult.scrollIntoView({behavior:"smooth"});
 }
 
 function resetSearch(){
