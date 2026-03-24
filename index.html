@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Zyrox Store | Tienda de zapatos en Colombia</title>
 
-<title>Zyrox Store</title>
+<meta name="description" content="Zyrox Store es una tienda online de zapatos modernos para hombre, mujer y niños. Descubre nuestra colección de tenis con estilo, comodidad y calidad. Encuentra modelos exclusivos como Air Force, zapatillas urbanas y calzado deportivo. Compra fácil, rápido y seguro con envíos a toda Colombia.">
 
-<meta name="description" content="Zyrox Store - Zapatos modernos para hombre, mujer y niños en Colombia. Envíos a todo el país y pago contra entrega.">
+<title>Zyrox Store | Tienda de zapatos en Colombia</title>
 
+<meta name="description" content="Zyrox Store es una tienda online de zapatos modernos para hombre, mujer y niños. Descubre nuestra colección de tenis con estilo, comodidad y calidad. Encuentra modelos exclusivos como Air Force, zapatillas urbanas y calzado deportivo. Compra fácil, rápido y seguro con envíos a toda Colombia.">
+
+<link rel="icon" type="image/png" href="logo-negro.png">
 
 <style>
+
 body{
   font-family:Arial;
   margin:0;
@@ -1042,54 +1049,61 @@ window.addEventListener("click", function(e){
 // Confirmar pago
 function confirmPayment(){
 
-// 1. VALIDAR CARRITO
+// VALIDAR SI HAY PRODUCTOS
 if(cart.length === 0){
-alert("El carrito está vacío");
+alert("Tu carrito está vacío");
 return;
 }
 
-// 2. DATOS CLIENTE
+// OBTENER DATOS DEL CLIENTE
 let nombre = document.getElementById("nombreCliente").value.trim();
 let direccion = document.getElementById("direccionCliente").value.trim();
 let telefono = document.getElementById("telefonoCliente").value.trim();
 
-// VALIDAR
+// VALIDAR CAMPOS
 if(nombre === "" || direccion === "" || telefono === ""){
-alert("Completa todos los datos");
+alert("Por favor completa todos los datos.");
 return;
 }
 
-// 3. CREAR MENSAJE (MUY IMPORTANTE BIEN FORMATEADO)
-let mensaje = "FACTURA ZYROX\n\n";
+// CREAR MENSAJE
+let mensaje = "🧾 PEDIDO ZYROX STORE%0A%0A";
 
-// PRODUCTOS
+// LISTA DE PRODUCTOS
 cart.forEach(item=>{
-mensaje += `${item.name} x${item.quantity} - $${item.price * item.quantity}\n`;
+mensaje += `👟 ${item.name} x${item.quantity} - $${item.price * item.quantity}%0A`;
 });
 
 // TOTAL
-mensaje += `\nTotal: $${total}\n\n`;
+mensaje += `%0A💰 Total: $${total}%0A%0A`;
 
-// CLIENTE
-mensaje += `Nombre: ${nombre}\n`;
-mensaje += `Direccion: ${direccion}\n`;
-mensaje += `Telefono: ${telefono}`;
+// DATOS CLIENTE
+mensaje += `👤 Nombre: ${nombre}%0A`;
+mensaje += `📍 Dirección: ${direccion}%0A`;
+mensaje += `📞 Teléfono: ${telefono}%0A%0A`;
 
-// 4. CODIFICAR MENSAJE (🔥 CLAVE)
-let mensajeCodificado = window.location.href = url;
+// MENSAJE FINAL
+mensaje += "✅ Gracias por comprar en Zyrox Store%0A";
+mensaje += "🚚 Te confirmaremos tu pedido pronto.";
 
-// 5. NUMERO
-let numero = "573203852595";
+// NUMERO DE WHATSAPP
+let numero = "573125271048";
 
-// 6. LINK WHATSAPP
-let url = `https://wa.me/${numero}?text=${mensajeCodificado}`;
+// LINK DE WHATSAPP
+let url = `https://wa.me/${numero}?text=${mensaje}`;
 
-// 7. ABRIR WHATSAPP DIRECTO
-window.location.href = url;
+// ABRIR WHATSAPP
+window.open(url, "_blank");
 
-// 8. LIMPIAR (OPCIONAL)
+// LIMPIAR CARRITO
 cart = [];
 updateCart();
+
+// CERRAR MODAL
+document.getElementById("paymentModal").style.display="none";
+
+// MOSTRAR MENSAJE
+document.getElementById("successModal").style.display="block";
 
 }
 
